@@ -14,6 +14,7 @@ permissions:
 
 env:
   PYTHON_VERSION: "3.13"
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
 
 jobs:
   test:
@@ -163,4 +164,3 @@ jobs:
         if: env.AWS_ROLE_TO_ASSUME == ''
         run: |
           echo "AWS deployment skipped. Configure AWS_ROLE_TO_ASSUME and ECR_REPOSITORY_URL to enable cloud deploys."
-
