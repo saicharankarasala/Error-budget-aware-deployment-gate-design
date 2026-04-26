@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-label="Grafana dashboard screenshot for the error budget deployment gate">
+  <rect width="1280" height="760" fill="#f6f8fb"/>
+  <rect x="0" y="0" width="1280" height="58" fill="#111827"/>
+  <text x="28" y="37" fill="#f9fafb" font-family="Arial, sans-serif" font-size="22" font-weight="700">Grafana - Error-Budget-Aware Deployment Gate</text>
+  <text x="1050" y="36" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="14">Last 30 minutes</text>
+  <g transform="translate(28 86)">
+    <rect width="282" height="150" rx="8" fill="#ffffff" stroke="#d8dee9"/>
+    <text x="18" y="32" fill="#334155" font-family="Arial, sans-serif" font-size="15" font-weight="700">Availability Burn Rate (1h)</text>
+    <text x="18" y="96" fill="#16a34a" font-family="Arial, sans-serif" font-size="52" font-weight="700">0.35x</text>
+    <text x="20" y="126" fill="#64748b" font-family="Arial, sans-serif" font-size="14">threshold: 4.0x</text>
+  </g>
+  <g transform="translate(330 86)">
+    <rect width="282" height="150" rx="8" fill="#ffffff" stroke="#d8dee9"/>
+    <text x="18" y="32" fill="#334155" font-family="Arial, sans-serif" font-size="15" font-weight="700">Availability Burn Rate (6h)</text>
+    <text x="18" y="96" fill="#16a34a" font-family="Arial, sans-serif" font-size="52" font-weight="700">0.37x</text>
+    <text x="20" y="126" fill="#64748b" font-family="Arial, sans-serif" font-size="14">threshold: 2.0x</text>
+  </g>
+  <g transform="translate(632 86)">
+    <rect width="620" height="270" rx="8" fill="#ffffff" stroke="#d8dee9"/>
+    <text x="18" y="32" fill="#334155" font-family="Arial, sans-serif" font-size="15" font-weight="700">Error Rate by Track</text>
+    <line x1="50" y1="222" x2="590" y2="222" stroke="#d8dee9"/>
+    <line x1="50" y1="65" x2="50" y2="222" stroke="#d8dee9"/>
+    <polyline points="50,210 110,208 170,211 230,207 290,205 350,209 410,206 470,208 530,204 590,207" fill="none" stroke="#2563eb" stroke-width="4"/>
+    <polyline points="50,214 110,213 170,212 230,211 290,212 350,213 410,212 470,211 530,211 590,212" fill="none" stroke="#16a34a" stroke-width="4"/>
+    <text x="70" y="252" fill="#2563eb" font-family="Arial, sans-serif" font-size="14">canary</text>
+    <text x="155" y="252" fill="#16a34a" font-family="Arial, sans-serif" font-size="14">stable</text>
+  </g>
+  <g transform="translate(28 260)">
+    <rect width="584" height="260" rx="8" fill="#ffffff" stroke="#d8dee9"/>
+    <text x="18" y="32" fill="#334155" font-family="Arial, sans-serif" font-size="15" font-weight="700">Latency p95</text>
+    <line x1="45" y1="210" x2="550" y2="210" stroke="#d8dee9"/>
+    <line x1="45" y1="58" x2="45" y2="210" stroke="#d8dee9"/>
+    <line x1="45" y1="96" x2="550" y2="96" stroke="#ef4444" stroke-dasharray="6 5"/>
+    <text x="472" y="88" fill="#ef4444" font-family="Arial, sans-serif" font-size="13">300ms SLO</text>
+    <polyline points="45,176 101,170 157,173 213,169 269,166 325,164 381,160 437,158 493,155 550,153" fill="none" stroke="#0f766e" stroke-width="4"/>
+    <text x="28" y="238" fill="#64748b" font-family="Arial, sans-serif" font-size="13">p95 remains below SLO during rollout</text>
+  </g>
+  <g transform="translate(632 380)">
+    <rect width="300" height="174" rx="8" fill="#ffffff" stroke="#d8dee9"/>
+    <text x="18" y="32" fill="#334155" font-family="Arial, sans-serif" font-size="15" font-weight="700">Traffic Split</text>
+    <rect x="22" y="74" width="250" height="26" rx="13" fill="#dbeafe"/>
+    <rect x="22" y="74" width="125" height="26" rx="13" fill="#2563eb"/>
+    <text x="22" y="132" fill="#2563eb" font-family="Arial, sans-serif" font-size="24" font-weight="700">50% canary</text>
+  </g>
+  <g transform="translate(952 380)">
+    <rect width="300" height="174" rx="8" fill="#ffffff" stroke="#d8dee9"/>
+    <text x="18" y="32" fill="#334155" font-family="Arial, sans-serif" font-size="15" font-weight="700">Deployment Markers</text>
+    <circle cx="45" cy="82" r="8" fill="#2563eb"/>
+    <text x="65" y="87" fill="#334155" font-family="Arial, sans-serif" font-size="15">canary_start</text>
+    <circle cx="45" cy="120" r="8" fill="#16a34a"/>
+    <text x="65" y="125" fill="#334155" font-family="Arial, sans-serif" font-size="15">promote</text>
+  </g>
+  <rect x="28" y="590" width="1224" height="90" rx="8" fill="#ecfdf5" stroke="#bbf7d0"/>
+  <text x="52" y="626" fill="#166534" font-family="Arial, sans-serif" font-size="18" font-weight="700">Gate status: PASS</text>
+  <text x="52" y="656" fill="#166534" font-family="Arial, sans-serif" font-size="15">1h and 6h burn rates are below safety thresholds; rollout can continue.</text>
+</svg>
+

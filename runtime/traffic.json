@@ -1,0 +1,7 @@
+{
+  "stable_url": "http://app-stable:8000",
+  "canary_url": "http://app-canary:8000",
+  "canary_weight": 0,
+  "active_version": "stable"
+}
+

@@ -1,0 +1,11 @@
+2026-04-26T14:22:10Z command="python -m gate.cli --sample-file examples/unhealthy_metrics.json"
+Deployment gate: FAIL
+short window: availability burn=7.80x, latency burn=2.80x, p95=0.720s
+long window: availability burn=3.28x, latency burn=1.76x, p95=0.480s
+reasons:
+- 1h availability burn 7.80x exceeds 4.00x
+- 6h availability burn 3.28x exceeds 2.00x
+- 1h p95 latency 0.720s exceeds 0.300s
+- 6h p95 latency 0.480s exceeds 0.300s
+result=DEPLOYMENT_BLOCKED
+

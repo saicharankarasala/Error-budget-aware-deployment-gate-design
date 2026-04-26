@@ -1,0 +1,33 @@
+{
+  "metadata": {
+    "scenario": "healthy production traffic"
+  },
+  "slo": {
+    "availability_target": 0.999,
+    "latency_success_target": 0.95,
+    "latency_threshold_seconds": 0.3
+  },
+  "thresholds": {
+    "short_burn_rate": 4.0,
+    "long_burn_rate": 2.0,
+    "max_metric_staleness_seconds": 300
+  },
+  "stale_seconds": 34,
+  "windows": {
+    "short": {
+      "window": "1h",
+      "requests": 120000,
+      "errors": 42,
+      "slow_requests": 1800,
+      "p95_latency_seconds": 0.18
+    },
+    "long": {
+      "window": "6h",
+      "requests": 710000,
+      "errors": 260,
+      "slow_requests": 10400,
+      "p95_latency_seconds": 0.2
+    }
+  }
+}
+

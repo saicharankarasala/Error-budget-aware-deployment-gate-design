@@ -1,0 +1,14 @@
+{
+  "steps": [
+    {
+      "weight": 10,
+      "window": "5m",
+      "requests": 5000,
+      "errors": 460,
+      "slow_requests": 1700,
+      "p95_latency_seconds": 0.84,
+      "stale_seconds": 10
+    }
+  ]
+}
+

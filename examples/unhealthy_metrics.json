@@ -1,0 +1,33 @@
+{
+  "metadata": {
+    "scenario": "active incident, deployment must be blocked"
+  },
+  "slo": {
+    "availability_target": 0.999,
+    "latency_success_target": 0.95,
+    "latency_threshold_seconds": 0.3
+  },
+  "thresholds": {
+    "short_burn_rate": 4.0,
+    "long_burn_rate": 2.0,
+    "max_metric_staleness_seconds": 300
+  },
+  "stale_seconds": 41,
+  "windows": {
+    "short": {
+      "window": "1h",
+      "requests": 100000,
+      "errors": 780,
+      "slow_requests": 14000,
+      "p95_latency_seconds": 0.72
+    },
+    "long": {
+      "window": "6h",
+      "requests": 580000,
+      "errors": 1900,
+      "slow_requests": 51000,
+      "p95_latency_seconds": 0.48
+    }
+  }
+}
+

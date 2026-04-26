@@ -1,0 +1,31 @@
+global:
+  scrape_interval: 10s
+  evaluation_interval: 10s
+  external_labels:
+    environment: local
+    service: slo-demo
+
+scrape_configs:
+  - job_name: app-stable
+    static_configs:
+      - targets:
+          - app-stable:8000
+        labels:
+          service: slo-demo
+          deployment_track: stable
+
+  - job_name: app-canary
+    static_configs:
+      - targets:
+          - app-canary:8000
+        labels:
+          service: slo-demo
+          deployment_track: canary
+
+  - job_name: traffic-router
+    static_configs:
+      - targets:
+          - router:8080
+        labels:
+          service: slo-demo
+

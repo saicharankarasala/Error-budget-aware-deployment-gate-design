@@ -1,0 +1,32 @@
+{
+  "steps": [
+    {
+      "weight": 10,
+      "window": "5m",
+      "requests": 4000,
+      "errors": 2,
+      "slow_requests": 90,
+      "p95_latency_seconds": 0.17,
+      "stale_seconds": 15
+    },
+    {
+      "weight": 50,
+      "window": "5m",
+      "requests": 12000,
+      "errors": 5,
+      "slow_requests": 230,
+      "p95_latency_seconds": 0.19,
+      "stale_seconds": 13
+    },
+    {
+      "weight": 100,
+      "window": "5m",
+      "requests": 22000,
+      "errors": 8,
+      "slow_requests": 410,
+      "p95_latency_seconds": 0.2,
+      "stale_seconds": 12
+    }
+  ]
+}
+

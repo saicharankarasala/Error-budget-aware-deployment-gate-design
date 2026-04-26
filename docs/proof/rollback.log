@@ -1,0 +1,6 @@
+2026-04-26T14:28:44Z CANARY_STARTED weights=[10]
+2026-04-26T14:28:44Z CANARY_WEIGHT_SET weight=10
+2026-04-26T14:28:45Z CANARY_ANALYSIS weight=10 status=FAIL availability_burn=92.00x latency_burn=6.80x p95=0.840s
+2026-04-26T14:28:45Z ROLLBACK_TRIGGERED reason='5m availability burn 92.00x exceeds 2.00x; 5m latency burn 6.80x exceeds 2.00x; 5m p95 latency 0.840s exceeds 0.300s' canary_weight=0
+2026-04-26T14:28:45Z rollback_lock=runtime/rollback.lock
+

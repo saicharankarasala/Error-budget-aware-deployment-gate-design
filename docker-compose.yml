@@ -1,0 +1,68 @@
+services:
+  app-stable:
+    build:
+      context: .
+      dockerfile: app/Dockerfile
+    environment:
+      APP_VERSION: "1.0.0"
+      APP_ROLE: "stable"
+      BASE_LATENCY_MS: "40"
+    ports:
+      - "8001:8000"
+
+  app-canary:
+    build:
+      context: .
+      dockerfile: app/Dockerfile
+    environment:
+      APP_VERSION: "1.1.0"
+      APP_ROLE: "canary"
+      BASE_LATENCY_MS: "40"
+    ports:
+      - "8002:8000"
+
+  router:
+    build:
+      context: .
+      dockerfile: router/Dockerfile
+    environment:
+      TRAFFIC_CONFIG: "/runtime/traffic.json"
+      STABLE_URL: "http://app-stable:8000"
+      CANARY_URL: "http://app-canary:8000"
+    volumes:
+      - ./runtime:/runtime
+    ports:
+      - "8080:8080"
+    depends_on:
+      - app-stable
+      - app-canary
+
+  prometheus:
+    image: prom/prometheus:v2.54.1
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.retention.time=12h"
+      - "--web.enable-lifecycle"
+    volumes:
+      - ./observability/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    ports:
+      - "9090:9090"
+    depends_on:
+      - app-stable
+      - app-canary
+      - router
+
+  grafana:
+    image: grafana/grafana:11.2.2
+    environment:
+      GF_SECURITY_ADMIN_USER: "admin"
+      GF_SECURITY_ADMIN_PASSWORD: "admin"
+      GF_USERS_DEFAULT_THEME: "light"
+    volumes:
+      - ./observability/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./observability/grafana/dashboards:/var/lib/grafana/dashboards:ro
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
+
